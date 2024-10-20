@@ -23,8 +23,8 @@ public class MouseMovement : MonoBehaviour
     void Update()
     {
         // mouse inputs
-        float MOUSE_X = Input.GetAxis("Mouse X") * MOUSE_SENS * Time.deltaTime;
-        float MOUSE_Y = Input.GetAxis("Mouse Y") * MOUSE_SENS * Time.deltaTime;
+        float MOUSE_X = Input.GetAxisRaw("Mouse X") * MOUSE_SENS * Time.deltaTime;
+        float MOUSE_Y = Input.GetAxisRaw("Mouse Y") * MOUSE_SENS * Time.deltaTime;
 
         // rotate around x axis (looking up and down) -> use mouse y input
         ROT_X -= MOUSE_Y;
