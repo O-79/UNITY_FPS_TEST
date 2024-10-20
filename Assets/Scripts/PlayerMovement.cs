@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // check if on ground
         GROUNDED = Physics.CheckSphere(GROUND_CHECK.position, GROUND_DISTANCE, GROUND_MASK);
-        Debug.Log($"Grounded: {GROUNDED}"); // Debug output
+        //Debug.Log($"Grounded: {GROUNDED}"); //
 
         // setting velocity to small negative number to make sure player stays hugging ground
         if (GROUNDED && VELOCITY.y < 0)
