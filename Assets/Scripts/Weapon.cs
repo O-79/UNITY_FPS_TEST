@@ -7,7 +7,7 @@ public class Weapon : MonoBehaviour
 {
     public GameObject BULLET_PREFAB;
     public Transform BULLET_SPAWN;
-    public float BULLET_SPEED = 48f;
+    public float BULLET_SPEED = 256f;
     public float BULLET_LIFETIME = 4f;
 
     // Update is called once per frame
