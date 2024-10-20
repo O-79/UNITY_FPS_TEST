@@ -49,9 +49,16 @@ public class PlayerMovement : MonoBehaviour
         float X = Input.GetAxisRaw("Horizontal");
         float Z = Input.GetAxisRaw("Vertical");
 
+        Vector3 FORWARD = CAMERA.transform.forward; // has y component
+        Vector3 RIGHT = CAMERA.transform.right;     // does not have y component
+
+        FORWARD.y = 0f;
+        FORWARD.Normalize();
+
         // move vector
-        Vector3 MOVE = CAMERA.transform.right * X + CAMERA.transform.forward * Z;
-        MOVE.y = 0f;
+        //Vector3 MOVE = CAMERA.transform.right * X + CAMERA.transform.forward * Z;
+        //MOVE.y = 0f;
+        Vector3 MOVE = (RIGHT * X + FORWARD * Z).normalized;
 
         // move the player
         CONTROLLER.Move(MOVE * SPEED * Time.deltaTime);
